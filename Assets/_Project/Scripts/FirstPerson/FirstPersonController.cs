@@ -100,6 +100,10 @@ namespace StarterAssets
 
         private void LateUpdate()
         {
+            if (DialogueManager.Instance != null && DialogueManager.Instance.IsDialogueActive)
+            {
+                return;
+            }
             CameraRotation();
         }
 
@@ -141,6 +145,17 @@ namespace StarterAssets
         private void Move()
         {
             float targetSpeed = MoveSpeed;
+
+            if (DialogueManager.Instance != null && DialogueManager.Instance.IsDialogueActive)
+            {
+                if (_input.interact)
+                {
+                    _input.interact = false;
+                    DialogueManager.Instance.DisplayNextSentence();
+                }
+
+                return; // Stay frozen!
+            }
 
             // Ask sprint system for speed if it exists
             if (sprint != null)
