@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &1067926263218006970
+--- !u!1001 &8945590749970710242
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,31 +10,31 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 9746adad65eba54459bc35631de5fae5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.259521
+      value: 162.96368
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9746adad65eba54459bc35631de5fae5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.006
+      value: 0.0000020950554
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9746adad65eba54459bc35631de5fae5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -56.738
+      value: 391.4144
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9746adad65eba54459bc35631de5fae5, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9999986
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9746adad65eba54459bc35631de5fae5, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.001563183
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9746adad65eba54459bc35631de5fae5, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.00052896695
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9746adad65eba54459bc35631de5fae5, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.00016429716
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9746adad65eba54459bc35631de5fae5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -51,7 +51,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 9746adad65eba54459bc35631de5fae5, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 78c90f9993f92f6489c33c814b0857f0, type: 2}
+      objectReference: {fileID: 2100000, guid: 10d5ee4a899370b419d34b0df4584a3f, type: 2}
     - target: {fileID: 919132149155446097, guid: 9746adad65eba54459bc35631de5fae5, type: 3}
       propertyPath: m_Name
       value: Plant_2B
