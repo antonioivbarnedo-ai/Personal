@@ -27,11 +27,6 @@ public class HeadBob : MonoBehaviour
 
     void Update()
     {
-
-        if (DialogueManager.Instance != null && DialogueManager.Instance.IsDialogueActive)
-        {
-            return;
-        }
         // 1. Calculate how fast we are actually moving horizontally
         float currentSpeed = new Vector3(controller.velocity.x, 0f, controller.velocity.z).magnitude;
 
