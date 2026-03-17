@@ -251,9 +251,9 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -617.0,
-            "y": -275.0,
-            "width": 208.00003051757813,
+            "x": -1145.0,
+            "y": -314.0,
+            "width": 208.00006103515626,
             "height": 314.0
         }
     },
@@ -566,7 +566,7 @@
     "m_AlphaMode": 0,
     "m_RenderFace": 0,
     "m_AlphaClip": true,
-    "m_CastShadows": false,
+    "m_CastShadows": true,
     "m_ReceiveShadows": false,
     "m_DisableTint": false,
     "m_Sort3DAs2DCompatible": false,
@@ -691,10 +691,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -317.8888244628906,
-            "y": -206.88882446289063,
-            "width": 208.0,
-            "height": 278.0
+            "x": -845.9999389648438,
+            "y": -246.0,
+            "width": 207.99993896484376,
+            "height": 277.9999694824219
         }
     },
     "m_Slots": [

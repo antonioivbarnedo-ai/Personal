@@ -80,11 +80,14 @@ namespace StarterAssets
             _controller = GetComponent<CharacterController>();
             _input = GetComponent<StarterAssetsInputs>();
 #if ENABLE_INPUT_SYSTEM
-            _playerInput = GetComponent<PlayerInput>();
+    _playerInput = GetComponent<PlayerInput>();
 #endif
 
             _jumpTimeoutDelta = JumpTimeout;
             _fallTimeoutDelta = FallTimeout;
+
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
 
         private void Update()
@@ -100,6 +103,10 @@ namespace StarterAssets
 
         private void LateUpdate()
         {
+            if (DialogueManager.Instance != null && DialogueManager.Instance.IsDialogueActive)
+            {
+                return;
+            }
             CameraRotation();
         }
 
@@ -141,6 +148,17 @@ namespace StarterAssets
         private void Move()
         {
             float targetSpeed = MoveSpeed;
+
+            if (DialogueManager.Instance != null && DialogueManager.Instance.IsDialogueActive)
+            {
+                if (_input.interact)
+                {
+                    _input.interact = false;
+                    DialogueManager.Instance.DisplayNextSentence();
+                }
+
+                return; // Stay frozen!
+            }
 
             // Ask sprint system for speed if it exists
             if (sprint != null)
