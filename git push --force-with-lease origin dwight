@@ -1,0 +1,18 @@
+[33m10c56fa[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mdwight[m[33m, [m[1;31morigin/dwight[m[33m)[m HEAD@{0}: checkout: moving from adz to dwight
+[33m54d0baf[m[33m ([m[1;31morigin/adz[m[33m, [m[1;32madz[m[33m)[m HEAD@{1}: reset: moving to HEAD
+[33m54d0baf[m[33m ([m[1;31morigin/adz[m[33m, [m[1;32madz[m[33m)[m HEAD@{2}: checkout: moving from dwight to adz
+[33m10c56fa[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mdwight[m[33m, [m[1;31morigin/dwight[m[33m)[m HEAD@{3}: pull --ff --recurse-submodules --progress origin: Fast-forward
+[33m54d0baf[m[33m ([m[1;31morigin/adz[m[33m, [m[1;32madz[m[33m)[m HEAD@{4}: reset: moving to HEAD@{3}
+[33m10c56fa[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mdwight[m[33m, [m[1;31morigin/dwight[m[33m)[m HEAD@{5}: checkout: moving from acb83cea79bb848793e2abcacec57828152df3d2 to dwight
+[33macb83ce[m HEAD@{6}: reset: moving to HEAD~1
+[33m10c56fa[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mdwight[m[33m, [m[1;31morigin/dwight[m[33m)[m HEAD@{7}: checkout: moving from adz to origin/dwight
+[33m54d0baf[m[33m ([m[1;31morigin/adz[m[33m, [m[1;32madz[m[33m)[m HEAD@{8}: commit (merge): Merge remote-tracking branch 'origin/hon' into adz
+[33m3b2e640[m HEAD@{9}: commit: Update branch
+[33mc93eee8[m HEAD@{10}: merge dwight: Merge made by the 'ort' strategy.
+[33ma0c8e87[m HEAD@{11}: checkout: moving from dwight to adz
+[33macb83ce[m HEAD@{12}: checkout: moving from adz to dwight
+[33ma0c8e87[m HEAD@{13}: reset: moving to HEAD
+[33ma0c8e87[m HEAD@{14}: checkout: moving from main to adz
+[33m00264fa[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m HEAD@{15}: pull --ff --recurse-submodules --progress origin: Fast-forward
+[33m3dab500[m HEAD@{16}: reset: moving to HEAD
+[33m3dab500[m HEAD@{17}: clone: from https://github.com/antonioivbarnedo-ai/Personal.git
