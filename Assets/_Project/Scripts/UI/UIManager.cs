@@ -4,9 +4,7 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
 
-    [Header("UI Panels")]
     [SerializeField] private GameObject gameOverScreen;
-    [SerializeField] private GameObject playerStatsHUD;
 
     void Awake()
     {
@@ -16,17 +14,6 @@ public class UIManager : MonoBehaviour
             Destroy(gameObject);
     }
 
-    public void ToggleHUD(bool show)
-    {
-        if (playerStatsHUD != null)
-        {
-            playerStatsHUD.SetActive(show);
-        }
-        else
-        {
-            Debug.LogWarning("UIManager: playerStatsHUD is not assigned in the Inspector!");
-        }
-    }
     public void ShowGameOver()
     {
         if (gameOverScreen != null)
