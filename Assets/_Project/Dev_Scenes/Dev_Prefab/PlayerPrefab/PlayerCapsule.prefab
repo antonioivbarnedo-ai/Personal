@@ -207,7 +207,6 @@ GameObject:
   - component: {fileID: 4312565650022323629}
   - component: {fileID: 6997626515612869621}
   - component: {fileID: 6638794552704210668}
-  - component: {fileID: 5702519195821511396}
   - component: {fileID: 2223147747698068696}
   - component: {fileID: 6656359438141478014}
   - component: {fileID: 1153009936350374073}
@@ -311,6 +310,8 @@ MonoBehaviour:
   look: {x: 0, y: 0}
   jump: 0
   sprint: 0
+  interact: 0
+  nextDialogue: 0
   analogMovement: 0
   cursorLocked: 1
   cursorInputForLook: 1
@@ -344,25 +345,7 @@ MonoBehaviour:
   BottomClamp: -90
   RotationSpeed: 1
   sprint: {fileID: 165446911156353793}
-  climbing: {fileID: 5702519195821511396}
---- !u!114 &5702519195821511396
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8597001092406892932}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe7bb9b50cdfd0d4d81db60faf85ca91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerClimbing
-  controller: {fileID: 6364767247624733281}
-  climbLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  climbSpeed: 3
-  detectDistance: 1
+  climbing: {fileID: 0}
 --- !u!114 &2223147747698068696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -444,6 +427,7 @@ MonoBehaviour:
   postProcessVolume: {fileID: 0}
   spiritLayer: SpiritWorld
   spiritDrainRate: 15
+  pauseDrain: 0
 --- !u!114 &4513520900648470347
 MonoBehaviour:
   m_ObjectHideFlags: 0
