@@ -1,47 +1,86 @@
-using UnityEngine;
-using StarterAssets; // Important: This allows us to talk to your movement script
+﻿using UnityEngine;
+using StarterAssets;
 
 public class PlayerInteractor : MonoBehaviour
 {
-    [SerializeField] private float interactRange = 4f; // Distance of the "laser"
-    [SerializeField] private LayerMask interactLayer;   // Set this to "Interactable" in Inspector
-    [SerializeField] private Transform cameraTransform; // Drag MainCamera here
-    
-    private StarterAssetsInputs _input;
+    [SerializeField] private float interactRange = 4f;
+    [SerializeField] private LayerMask interactLayer;
+    [SerializeField] private Transform cameraTransform;
 
-    private void Start()
+    [Header("Interaction Prompt UI")]
+    [SerializeField] private GameObject interactPromptUI;
+
+    private StarterAssetsInputs _input;
+    private FirstPersonController _fpsController;
+    private IInteractable _currentTarget;
+
+    void Start()
     {
         _input = GetComponent<StarterAssetsInputs>();
+        _fpsController = GetComponent<FirstPersonController>();
+
+        if (interactPromptUI != null)
+            interactPromptUI.SetActive(false);
     }
 
     void Update()
     {
-        // Don't interact if we are already in a conversation
-        if (DialogueManager.Instance != null && DialogueManager.Instance.IsDialogueActive) return;
-
-        // Check if the Interact button (E) was pressed
-        if (_input.interact) 
+        if (DialogueManager.Instance != null && DialogueManager.Instance.IsDialogueActive)
         {
-            // Reset the button immediately so it doesn't trigger every single frame
-            _input.interact = false; 
+            HidePrompt();
+            LockMovement(true);
 
-            Debug.Log("Player tried to interact!");
-
-            Ray ray = new Ray(cameraTransform.position, cameraTransform.forward);
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit, interactRange, interactLayer))
+            if (_input.interact)
             {
-                if (hit.collider.TryGetComponent(out IInteractable interactable))
-                {
-                    Debug.Log("Hit an interactable object: " + hit.collider.name);
-                    interactable.Interact();
-                }
+                _input.interact = false;
+                DialogueManager.Instance.DisplayNextSentence();
             }
-            else 
-            {
-                Debug.Log("Raycast hit nothing on the Interactable layer.");
-            }
+            return;
         }
+
+        // Dialogue just ended — make sure movement is restored
+        LockMovement(false);
+
+        ScanForTarget();
+
+        if (_input.interact && _currentTarget != null)
+        {
+            _input.interact = false;
+            _currentTarget.Interact();
+        }
+    }
+
+    void LockMovement(bool locked)
+    {
+        if (_fpsController != null)
+            _fpsController.enabled = !locked;
+    }
+
+    void ScanForTarget()
+    {
+        Ray ray = new Ray(cameraTransform.position, cameraTransform.forward);
+        if (Physics.Raycast(ray, out RaycastHit hit, interactRange, interactLayer)
+            && hit.collider.TryGetComponent(out IInteractable interactable))
+        {
+            _currentTarget = interactable;
+            ShowPrompt();
+        }
+        else
+        {
+            _currentTarget = null;
+            HidePrompt();
+        }
+    }
+
+    void ShowPrompt()
+    {
+        if (interactPromptUI != null && !interactPromptUI.activeSelf)
+            interactPromptUI.SetActive(true);
+    }
+
+    void HidePrompt()
+    {
+        if (interactPromptUI != null && interactPromptUI.activeSelf)
+            interactPromptUI.SetActive(false);
     }
 }

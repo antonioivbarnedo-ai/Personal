@@ -6,14 +6,16 @@ public class QuestEventListener : MonoBehaviour
 {
     void OnEnable()
     {
-        QuestManager.OnQuestStateChanged  += HandleQuestChanged;
+        QuestManager.OnQuestStateChanged += HandleQuestChanged;
         InventorySystem.OnInventoryChanged += HandleInventoryChanged;
+        DayManager.OnDayStarted += HandleDayStarted;
     }
 
     void OnDisable()
     {
-        QuestManager.OnQuestStateChanged  -= HandleQuestChanged;
+        QuestManager.OnQuestStateChanged -= HandleQuestChanged;
         InventorySystem.OnInventoryChanged -= HandleInventoryChanged;
+        DayManager.OnDayStarted -= HandleDayStarted;
     }
 
     void HandleQuestChanged(QuestState oldState, QuestState newState)
@@ -42,4 +44,22 @@ public class QuestEventListener : MonoBehaviour
         if (itemName == InventorySystem.MAGICAL_MANGO && wasAdded)
             Debug.Log("[Listener] Player has the Magical Mango!");
     }
+
+
+
+    void HandleDayStarted(GameDay newDay)
+    {
+        switch (newDay)
+        {
+            case GameDay.Day2_Free:
+                Debug.Log("[Listener] Day 2 started — free roam.");
+                break;
+
+            case GameDay.Day3_KikoGone:
+                Debug.Log("[Listener] Day 3 — Kiko is missing.");
+                // e.g. hide Kiko's playground visuals, show worried Tala state
+                break;
+        }
+    }
+
 }

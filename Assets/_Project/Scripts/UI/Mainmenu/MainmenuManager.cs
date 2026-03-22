@@ -13,7 +13,7 @@ public class MainMenuManager : MonoBehaviour
         }
 
         // QUIT GAME
-        if (Keyboard.current.fKey.wasPressedThisFrame)
+        if (Keyboard.current.escapeKey.wasPressedThisFrame)
         {
             QuitGame();
         }

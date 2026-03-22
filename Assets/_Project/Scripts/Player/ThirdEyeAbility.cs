@@ -43,7 +43,7 @@ public class ThirdEyeAbility : MonoBehaviour
 
     {
 
-        if (UnityEngine.InputSystem.Keyboard.current.qKey.wasPressedThisFrame)
+        if(UnityEngine.InputSystem.Keyboard.current.fKey.wasPressedThisFrame)
 
         {
             ToggleEye();
