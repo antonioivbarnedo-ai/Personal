@@ -17,6 +17,11 @@ public class PlayerClimbing : MonoBehaviour
 
     void DetectClimb()
     {
+        if (!QuestManager.Instance.IsAtLeast(QuestState.THIRD_EYE_UNLOCKED))
+        {
+            isClimbing = false;
+            return;
+        }
         Ray ray = new Ray(transform.position, transform.forward);
         RaycastHit hit;
 
